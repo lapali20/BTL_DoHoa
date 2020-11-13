@@ -1,10 +1,16 @@
 
+import DirectionalLight from "./light.js";
+import Test from "./light.js";
+
 var clock = new THREE.Clock();
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var interactableObjList = [];
 
 var renderer = new THREE.WebGLRenderer();
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild( renderer.domElement);
 
@@ -22,7 +28,6 @@ window.addEventListener( 'resize', function () {
     camera.updateProjectionMatrix();
 })
 
-// controls = new THREE.OrbitControls( camera, renderer.domElement );
 var controls = new THREE.FirstPersonControls(camera, renderer.domElement);
     controls.lookSpeed = 0.2;
     controls.movementSpeed = 10;
@@ -50,47 +55,69 @@ var material = new THREE.MeshFaceMaterial( cubeMaterials );
 var cube = new THREE.Mesh( geometry, material);
 scene.add(cube);
 
-const room = new GLTFLoader();
+var cube1 = new THREE.Mesh( geometry, material);
+scene.add(cube1);
+cube1.position.x = 2
 
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath( '/js/libs/draco/' );
-room.setDRACOLoader( dracoLoader );
+// var room = new THREE.GLTFLoader();
 
-room.load(
-	'models/room.gltf',
-	function ( gltf ) {
+// var dracoLoader = new THREE.DRACOLoader();
+// // dracoLoader.setDecoderPath( '/js/libs/draco/' );
+// room.setDRACOLoader( dracoLoader );
 
-		scene.add( gltf.scene );
+// room.load(
+// 	'models/room.gltf',
+// 	function ( gltf ) {
 
-		gltf.animations; 
-		gltf.scene;
-		gltf.scenes;
-		gltf.cameras;
-		gltf.asset;
+// 		scene.add( gltf.scene );
 
-	},
-	function ( xhr ) {
+// 		gltf.animations; 
+// 		gltf.scene;
+// 		gltf.scenes;
+// 		gltf.cameras;
+// 		gltf.asset;
 
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+// 	},
+// 	function ( xhr ) {
 
-	},
-	function ( error ) {
+// 		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
-		console.log( 'An error happened' );
+// 	},
+// 	function ( error ) {
 
-	}
-);
+// 		console.log( 'An error happened' );
+
+// 	}
+// );
+
+var mesh;
+let mtlLoader = new THREE.MTLLoader();
+let objLoader = new THREE.OBJLoader();
+mtlLoader.load('models/Room_Model.mtl', (materials) => {
+  materials.preload();
+  objLoader.setMaterials(materials);
+  objLoader.load('models/Room_Model.obj', (object) => {
+    mesh = object;
+    scene.add(object);
+  })
+});
 
 camera.position.z = 3;
 
-var ambientLight = new THREE.AmbientLight(0xFFFFFF, 5.0);
+const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+light.position.set( 0, 0, 0 ); //default; light shining from top
+light.castShadow = true; // default false
+scene.add( light );
+
+var directionalLight = new DirectionalLight(scene, 0, 0, 0);
 
 var update = function() {
-   
+    camera.position.y = 2;
+    light.position.y += 0.01;
 };
 
 var render = function() {
-    camera.position.y = 1;
+    
     var delta = clock.getDelta();
     renderer.render( scene, camera );
     controls.update(delta);
@@ -98,7 +125,7 @@ var render = function() {
 
 var GameLoop = function() {
     requestAnimationFrame( GameLoop );
-
+    // console.log(camera.position);
     update();
     render();
 };
