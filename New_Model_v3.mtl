@@ -1,5 +1,5 @@
 # Blender MTL File: 'New_Model_v3.blend'
-# Material Count: 7
+# Material Count: 9
 
 newmtl Chieu_dai_wall
 Ns 225.000000
@@ -10,18 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\Tuong_v2.jpg
-
-newmtl Chieu_rong_wall
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd Texture\\Tuong_v2.jpg
+map_Kd Texture\\Tuong.jpg
 
 newmtl Floor
 Ns 225.000000
@@ -44,6 +33,38 @@ Ni 1.450000
 d 1.000000
 illum 2
 
+newmtl Material.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Material.005
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Texture\\1.png
+
+newmtl Material.006
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Texture\\TexturesCom_Wood_OakVeneer2_1K_albedo.tif
+
 newmtl None
 Ns 500
 Ka 0.8 0.8 0.8
@@ -61,14 +82,15 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd -s 5.000000 5.000000 1.000000 Texture\\Tuong_v2.jpg
+map_Kd Texture\\Tuong_v2.jpg
 
 newmtl Wall_all
 Ns 225.000000
 Ka 1.000000 1.000000 1.000000
-Kd 1.000000 0.954009 0.954009
+Kd 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
+map_Kd Texture\\Tuong.jpg
