@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\Tuong.jpg
+map_Kd Texture\\Tuong_v2.jpg
 
 newmtl Floor
 Ns 225.000000
@@ -23,6 +23,17 @@ d 1.000000
 illum 2
 map_Kd Texture\\San_go.jpg
 
+newmtl Material
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Earth_TEXTURE_CM.tga
+
 newmtl Material.002
 Ns 323.999994
 Ka 1.000000 1.000000 1.000000
@@ -33,7 +44,7 @@ Ni 1.450000
 d 1.000000
 illum 2
 
-newmtl Material.004
+newmtl Material.007
 Ns 225.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
@@ -42,8 +53,9 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
+map_Kd Texture\\San_go.jpg
 
-newmtl Material.005
+newmtl Material.008
 Ns 225.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
@@ -52,18 +64,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\1.png
-
-newmtl Material.006
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd Texture\\TexturesCom_Wood_OakVeneer2_1K_albedo.tif
+map_Kd Texture\\San_go.jpg
 
 newmtl None
 Ns 500
@@ -93,4 +94,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\Tuong.jpg
+map_Kd Texture\\San_go.jpg
