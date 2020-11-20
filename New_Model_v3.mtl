@@ -1,5 +1,5 @@
 # Blender MTL File: 'New_Model_v3.blend'
-# Material Count: 9
+# Material Count: 12
 
 newmtl Chieu_dai_wall
 Ns 225.000000
@@ -32,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\Earth_TEXTURE_CM.tga
+map_Kd Texture\\Earth_TEXTURE_CM.tga
 
 newmtl Material.002
 Ns 323.999994
@@ -95,3 +95,34 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd Texture\\San_go.jpg
+
+newmtl leaf_paloagua.jpg
+Ns 139.215681
+Ka 1.000000 1.000000 1.000000
+Kd 0.071398 0.343576 0.009370
+Ks 0.353529 0.353529 0.353529
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Texture\\paloagua.jpg
+
+newmtl maceta
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.433616 0.247906 0.082205
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl tierra_maceta
+Ns 52.941188
+Ka 1.000000 1.000000 1.000000
+Kd 0.314021 0.236591 0.167504
+Ks 0.207057 0.207057 0.207057
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
