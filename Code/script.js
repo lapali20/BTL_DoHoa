@@ -5,7 +5,8 @@ var clock = new THREE.Clock();
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 3;
+camera.position.z = 1;
+camera.position.y = -1.5;
 var renderer = new THREE.WebGLRenderer();
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -40,26 +41,29 @@ window.addEventListener( 'resize', function () {
 
 // ------ danh sách models
 var models = {
-    // room: {
-    //     obj:"models/room.obj",
-    //     mtl:"models/room.mtl",
-    //     mesh: null,
-    // },
-    Room_Model: {
-        obj:"models/Room_Model.obj",
-        mtl:"models/Room_Model.mtl",
-        posX: -5,
+    Main: {
+        obj:"models/Main.obj",
+        mtl:"models/Main.mtl",
+        mesh: new THREE.Mesh(),
+        posX: 0,
         posY: 0,
-        posZ: 4
-    }
+        posZ: 0
+    },
+    tu: {
+        obj:"models/test.obj",
+        mtl:"models/test.mtl",
+        mesh: new THREE.Mesh(),
+        posX: 0,
+        posY: 2,
+        posZ: 3
+    },
 }
 
-var meshes = {}
+
 
 var loadObjects = function() {
     for( var _key in models ){
 		(function(key){
-			
             var mtlLoader = new THREE.MTLLoader();
 			mtlLoader.load(models[key].mtl, (materials) => {
 				materials.preload();
@@ -68,8 +72,9 @@ var loadObjects = function() {
 				
                 objLoader.setMaterials(materials);
 				objLoader.load(models[key].obj, (object) => {
-                    scene.position.set(models[key].posX, models[key].posY, models[key].posZ);
-					scene.add(object);
+                    object.position.set(models[key].posX, models[key].posY, models[key].posZ);
+                    models[key].mesh = object;
+					scene.add(models[key].mesh);
 				});
 			});
 			
@@ -77,14 +82,25 @@ var loadObjects = function() {
     }
 }
 
+// ------ điều khiển đồ vật
+var moveObject = function(objId, moveX, moveZ) {
+    if (objId == null) return;
+    models[objId].mesh.position.x += moveX;
+    models[objId].mesh.position.z += moveZ;
+}
+
 // ------ anh sang
 const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
-light.position.set( 0, 0, 0 ); //default; light shining from top
+light.position.set( 1, 1, 1 ); //default; light shining from top
 light.castShadow = true; // default false
 scene.add( light );
 
+var light2 = light.clone();
+light2.position.set( -1, 1, -1);
+scene.add( light2 );
+
 var update = function() {
-    light.position.y += 0.01;
+    
 };
 
 // ------ phần điều khiển camera
@@ -112,10 +128,11 @@ addEventListener('keyup', (e) => {
 })
 
 function processKeyboard() {
-    let speed = 6;
+    let speed = 2;
     let actualSpeed = speed * clock.getDelta();
     if (keyboard['w']) {
         controls.moveForward(actualSpeed);
+        
     }
     if (keyboard['s']) {
         controls.moveForward(-actualSpeed);
