@@ -60,7 +60,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\1K-casino_carpet_4-diffuse.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\1K-casino_carpet_4-diffuse.jpg
 
 newmtl wire_224086086
 Ns 225.000000
@@ -71,7 +71,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\1K-casino_carpet_4-diffuse.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\1K-casino_carpet_4-diffuse.jpg
 
 newmtl wire_224198087
 Ns 225.000000
@@ -82,7 +82,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\Brushed_gold_01_1K_Base_Color.png
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_01_1K_Base_Color.png
 
 newmtl wire_229166215
 Ns 812.249999
@@ -93,4 +93,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd Texture\\Brushed_gold_01_1K_Base_Color.png
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_01_1K_Base_Color.png
