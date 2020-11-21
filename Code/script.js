@@ -2,14 +2,11 @@ import Rect from './Rect.js'
 
 var speed = 6;
 
-
-
-
-
 var clock = new THREE.Clock();
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.x = 6;
 camera.position.z = -3;
 camera.lookAt(0, 0, 0);
 
@@ -25,8 +22,8 @@ loader.load('background.jpg' , function(texture)
              scene.background = texture;  
             });
 
-const plane = new THREE.PlaneGeometry( 100, 100 );
-const planeMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+const plane = new THREE.PlaneGeometry( 16, 17 );
+const planeMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
 const planeMesh = new THREE.Mesh( plane, planeMaterial );
 planeMesh.rotation.x = Math.PI / 2;
 scene.add( planeMesh );
@@ -42,8 +39,8 @@ window.addEventListener( 'resize', function () {
 // ------ danh sách models
 var models = {
     Main: {
-        obj:"models/Model_Final.obj",
-        mtl:"models/Model_Final.mtl",
+        obj:"models/Room.obj",
+        mtl:"models/Room.mtl",
         mesh: new THREE.Mesh(),
         interactable: false,
         posX: 0,
@@ -51,58 +48,15 @@ var models = {
         posZ: 0
     },
     khung_anh: {
-        obj:"models/Khung_anh.obj",
-        mtl:"models/Khung_anh.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 0,
-        posY: 1,
-        posZ: 0
-    },
-    khung_anh_2: {
         obj:"models/Khung_anh_doc.obj",
         mtl:"models/Khung_anh_doc.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: 4,
-        posY: 1,
+        posY: 2,
         posZ: 0
     },
-    Tu1 : {
-        obj:"models/Tu_to_khong_kinh.obj",
-        mtl:"models/Tu_to_khong_kinh.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 1,
-        posY: 0, 
-        posZ: 0,
-    },
-    // Tu2 : {
-    //     obj:"models/Tu_to_khong_kinh.obj",
-    //     mtl:"models/Tu_to_khong_kinh.mtl",
-    //     mesh: new THREE.Mesh(),
-    //     posX: 1,
-    //     posY: 0, 
-    //     posZ: 0,
-    // },
-    Tu3 : {
-        obj:"models/Tu_to_khong_kinh.obj",
-        mtl:"models/Tu_to_khong_kinh.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 4,
-        posY: 0, 
-        posZ: 6.5,
-    },
-    Tu4 : {
-        obj:"models/Tu_to_khong_kinh.obj",
-        mtl:"models/Tu_to_khong_kinh.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: -4,
-        posY: 0, 
-        posZ: 6.5,
-    },
+    
 }
 
 var loadObjects = function() {
@@ -154,7 +108,7 @@ var UpdateObjects = function() {
                     isAiming = true;
                     swapPointer(true);
                 }
-                models[raycastTargetName].mesh.rotation.y += 0.01;
+                // models[raycastTargetName].mesh.rotation.y += 0.01;
             }
         }
         else
@@ -183,31 +137,46 @@ var updateRaycast = function () {
 
 // ------ anh sang
 var lights = [];
+var lightTargets = [];
 
-lights[0] = new THREE.PointLight(0xffffff, 0.8, 18);
-lights[0].position.set(0, 2, 0);
-lights[0].castShadow = true;
-lights[0].shadow.camera.near = 0.1;
-lights[0].shadow.camera.far = 25;
+lights[0] = new THREE.AmbientLight(0xffffff, 0.4);
 
-lights[1] = new THREE.AmbientLight(0xffffff, 0.2);
+for (var i = 1; i <= 6; i++)
+{
+    lights[i] = new THREE.DirectionalLight( 0xffffff, 0.1);
+    lightTargets[i] = new THREE.Object3D();
+    scene.add(lightTargets[i]);
+    lights[i].target = lightTargets[i];
+}
+
+lights[1].position.set(4, 3.5, 6.5);
+lightTargets[1].position.set(4, 0, 6.5);
+
+lights[2].position.set(-4, 3.5, 6.5);
+lightTargets[2].position.set(-4, 0, 6.5);
+
+lights[3].position.set(4, 3.5, -6.5);
+lightTargets[3].position.set(4, 0, -6.5);
+
+lights[4].position.set(-4, 3.5, -6.5);
+lightTargets[4].position.set(-4, 0, -6.5);
+
+lights[5].position.set(4, 3.5, 0);
+lightTargets[5].position.set(4, 0, 0);
+
+lights[6].position.set(-4, 3.5, 0);
+lightTargets[6].position.set(-4, 0, 0);
 
 var InitLight = function() {
     for (var i = 0; i < lights.length; i++)
     {
+        if (i > 0)
+        {
+            lights[i].castShadow = true;
+        }
         scene.add(lights[i]);
     }
 }
-
-// ------ test vi tri den 
-const geometry = new THREE.BoxGeometry( 0.1, 0.1, 0.1 );
-const material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
-var cube = new THREE.Mesh( geometry, material );
-cube.receiveShadow = true;
-cube.castShadow = true;
-cube.position.set(1, 1.5, 0);
-scene.add( cube );
-
 
 // ------ phần điều khiển camera
 var controls = new THREE.PointerLockControls(camera, renderer.domElement);
@@ -222,6 +191,10 @@ addEventListener('keydown', (e) => {
 addEventListener('keyup', (e) => {
     keyboard[e.key] = false;
 })
+
+addEventListener('mousedown', (e) => {
+    showInfo();
+});
 
 function processKeyboard() {
     let actualSpeed = speed * clock.getDelta();
@@ -254,17 +227,33 @@ function processKeyboard() {
     }
 }
 
+const geometry = new THREE.BoxGeometry( 0.3, 2.5, 2 );
+const material = new THREE.MeshPhongMaterial( {color: 0x352315} );
+var cube = new THREE.Mesh( geometry, material );
+cube.receiveShadow = true;
+cube.castShadow = true;
+cube.position.set(5, 1.25, 4.5);
+scene.add( cube );
+var door = new Rect({x: 5, y: 0, z: 4.5}, 0.3, 2);
+var checkIn = function() {
+    if (door.Contain(camera.position.x, camera.position.z))
+    {
+        showTutorial(false);
+    }
+}
+
 // ------- chặn di chuyển xuyên vật thể
 
 var listBlock = [
-    new Rect({x : 6, y : 0, z : 0}, 3, 17),     //
-    new Rect({x : -6, y : 0, z : 0}, 3, 17),    // tuong
-    new Rect({x : 0, y : 0, z : 8.5}, 15, 3),   //
-    new Rect({x : 0, y : 0, z : -8.5}, 15, 3),  //
-    new Rect({x : 1, y : 0, z : 0}, 2, 2),
+    new Rect({x : 5, y : 0, z : 6.5}, 1, 2),     //
+    new Rect({x : 5, y : 0, z : -2}, 1, 11),     //
+    new Rect({x : -5, y : 0, z : 0}, 1, 17),    // tuong
+    new Rect({x : 0, y : 0, z : 7.5}, 11, 1),   //
+    new Rect({x : 0, y : 0, z : -7.5}, 11, 1),  //
 ]
 
 var Block = function() {
+    checkIn();
     var tempX, tempZ;
     var block;
     for (var i = 0; i < listBlock.length; i++)
@@ -315,8 +304,12 @@ var showTutorial = function (isShowed) {
 }
 
 var showInfo = function () {
-    document.getElementById("info").style.display = "inline-block";
-
+    if (isAiming)
+    {
+        document.getElementById("info").style.display = "inline-block";
+        document.getElementById("info-image").src = models[raycastTargetName].img;
+        document.getElementById("info-text").innerHTML = models[raycastTargetName].text;
+    }
 }
 
 var closeInfo = function () {
@@ -335,7 +328,6 @@ var render = function() {
 
 var GameLoop = function() {
     requestAnimationFrame( GameLoop );
-    // console.log(camera.position);
     processKeyboard()
     update();
     render();

@@ -1,5 +1,27 @@
 # Blender MTL File: 'Tu_to_khong_kinh.blend'
-# Material Count: 2
+# Material Count: 3
+
+newmtl Be_mat
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\1K-casino_carpet_4-diffuse.jpg
+
+newmtl Main
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Texture\\San_go.jpg
 
 newmtl Material.001
 Ns 225.000000
@@ -10,15 +32,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\San_go.jpg
-
-newmtl Material.002
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd Texture\\San_go.jpg
+map_Kd D:\\Plastic006_2K-JPG\\Plastic006_2K_Color.jpg
