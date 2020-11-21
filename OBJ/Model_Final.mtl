@@ -1,5 +1,5 @@
 # Blender MTL File: 'Model_Final.blend'
-# Material Count: 23
+# Material Count: 27
 
 newmtl Be_mat
 Ns 0.000000
@@ -89,6 +89,17 @@ d 1.000000
 illum 2
 map_Kd D:\\BTL_DoHoa\\Texture\\Tuong.jpg
 
+newmtl Material.001
+Ns 575.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_01_1K_Base_Color.png
+
 newmtl Material.002
 Ns 225.000000
 Ka 1.000000 1.000000 1.000000
@@ -99,6 +110,17 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd D:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
+
+newmtl Material.003
+Ns 575.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_01_1K_Base_Color.png
 
 newmtl Nen
 Ns 225.000000
@@ -151,6 +173,28 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd d:\\BTL_DoHoa\\floortexture.jpg
+
+newmtl trophy_base
+Ns 225.000000
+Ka 0.861818 0.861818 0.861818
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd D:\\BTL_DoHoa\\Texture\\Clay001_2K_Color.jpg
+
+newmtl trophy_plate
+Ns 728.999998
+Ka 0.900000 0.900000 0.900000
+Kd 1.000000 0.590619 0.104617
+Ks 0.100000 0.100000 0.100000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_01_1K_Base_Color.png
 
 newmtl wire_006134006
 Ns 225.000000
