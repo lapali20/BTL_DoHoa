@@ -10,6 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic010_2K_Color.jpg
 
 newmtl Material.001
 Ns 225.000000
@@ -20,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic008_2K_Color.jpg
 
 newmtl Material.002
 Ns 225.000000
