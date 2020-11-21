@@ -1,5 +1,5 @@
 # Blender MTL File: 'Model_Final.blend'
-# Material Count: 8
+# Material Count: 11
 
 newmtl AM152_063_black
 Ns 10.000002
@@ -82,3 +82,36 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd D:\\BTL_DoHoa\\Texture\\Tuong_v2.jpg
+
+newmtl Material.010
+Ns 323.999994
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic010_2K_Color.jpg
+
+newmtl Material.011
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
+
+newmtl Material.012
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic008_2K_Color.jpg
