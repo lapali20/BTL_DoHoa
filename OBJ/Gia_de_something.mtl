@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\San_go.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\San_go.jpg
 
 newmtl Material
 Ns 323.999994
@@ -21,7 +21,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Texture\\San_go.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\San_go.jpg
 
 newmtl Material.001
 Ns 225.000000
@@ -32,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\Plastic006_2K-JPG\\Plastic006_2K_Color.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
 
 newmtl Nen
 Ns 225.000000
@@ -43,4 +43,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd D:\\1K-casino_carpet_4-diffuse.jpg
+map_Kd D:\\BTL_DoHoa\\Texture\\1K-casino_carpet_4-diffuse.jpg
