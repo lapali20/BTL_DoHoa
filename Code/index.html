@@ -10,6 +10,7 @@
     </head>
     <body>
         <script src="build/three.js"></script>
+        <script src="build/three.module.js" type="module"></script>
         <script src="js/controls/DragControls.js"></script>
         <script src="js/controls/PointerLockControls.js"></script>
         <script src="js/controls/FirstPersonControls.js"></script>
@@ -17,7 +18,29 @@
         <script src="js/loaders/OBJLoader.js"></script>
         <script src="js/loaders/MTLLoader.js"></script>
         <script src="js/loaders/GLTFLoader.js"></script>
+        <script src="./Rect.js" type="module"></script>
+
+
         <script src="script.js" type="module"></script>
+        <span id="tutorial">
+            <pre>
+|            Huong dan                                   |
+|            Su dung cac nut A W S D de di chuyen        |
+|            nhan E de xem thong tin chi tiet ve         |
+|            nhan Q de tat Huong dan / bang thong tin    |
+|            nhan Tab de hien con tro chuot              |
+|            nhan H de bat Huong dan                     |
+|                                                        |
+|            ! Nhan ESc se gay loi                       |
+            </pre>
+        </span>
+        <span id="info">
+            <img id="info-image" src="temp.png">
+            <pre id="info-text">
+                this is information about ...
+            </pre>
+        </span>
+        <img id="pointer" src="pointer.png" alt="pointer" width="25px" height="25px">
         <button id="start-btn">Press to start</button>
     </body>
 </html>

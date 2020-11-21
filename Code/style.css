@@ -1,3 +1,40 @@
+
+html {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: bolder;
+}
+
+img {
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#tutorial {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  background: rgba( 0, 0, 0, 0.5);
+  border-style: double;
+}
+
+#info {
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  background: rgba( 0, 0, 0, 0.5);
+  border-style: double;
+  display: none;
+}
+
 #start-btn {
   position: absolute;
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
