@@ -1,5 +1,5 @@
 # Blender MTL File: 'Model_Final.blend'
-# Material Count: 35
+# Material Count: 31
 
 newmtl AM152_063_black
 Ns 10.000002
@@ -93,17 +93,6 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd D:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
-
-newmtl Cua
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd d:\\BTL_DoHoa\\Texture\\San_go.jpg
 
 newmtl Floor
 Ns 225.000000
@@ -222,39 +211,6 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd D:\\BTL_DoHoa\\Texture\\1K-casino_carpet_4-diffuse.jpg
-
-newmtl Tay_nam_cua
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd d:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
-
-newmtl Tay_nam_cua_trong
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd d:\\BTL_DoHoa\\Texture\\Plastic006_2K_Color.jpg
-
-newmtl Vien_ngoai
-Ns 225.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-map_Kd D:\\BTL_DoHoa\\Texture\\floortexture.jpg
 
 newmtl trophy_base
 Ns 225.000000
