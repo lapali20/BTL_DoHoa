@@ -28,14 +28,6 @@ const planeMesh = new THREE.Mesh( plane, planeMaterial );
 planeMesh.rotation.x = Math.PI / 2;
 scene.add( planeMesh );
 
-window.addEventListener( 'resize', function () {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    renderer.setSize( width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-})
-
 // ------ danh sách models
 var models = {
     Main: {
@@ -105,15 +97,15 @@ var models = {
         posY: 2,
         posZ: -3.5,
         rotate: -Math.PI / 2,
-        img: "Texture/HT3.png",
+        img: "HT3.jpg",
         text: `giáo sư Nguyễn Văn Đạo (1937 - 2006)
 
 Giám đốc Đại học Quốc gia Hà Nội 
 nhiệm kì 1993 - năm 2001`
     },
-    khung_anh5: {
+    DaoTrongThi: {
         obj:"models/Khung_anh_doc.obj",
-        mtl:"models/Khung_anh_doc.mtl",
+        mtl:"models/DaoTrongThi.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: -4.8,
@@ -123,16 +115,16 @@ nhiệm kì 1993 - năm 2001`
         img: "kinhlup.png",
         text: "nothing to show"
     },
-    khungNganh : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
+    MaiTrongNhuan : {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/MaiTrongNhuan.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: 0,
         posY: 2.5,
         posZ: 7.45,
         rotate: - Math.PI,
-        img: "kinhlup.png",
+        img: "Texture/HT2.jpg",
         text: "nothing to show"
     },
     khungNganh1 : {
@@ -232,8 +224,8 @@ nhiệm kì 1993 - năm 2001`
         text: "nothing to show"
     },
     HuanChuongSaoVang : {
-        obj:"models/Medal.obj",
-        mtl:"models/Medal.mtl",
+        obj:"models/Star.obj",
+        mtl:"models/Star.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: -2.5,
@@ -301,6 +293,7 @@ var UpdateObjects = function() {
         else
         {
             isAiming = false;
+            closeInfo();
             swapPointer(false);
         }
     }
@@ -326,7 +319,7 @@ var updateRaycast = function () {
 var lights = [];
 var lightTargets = [];
 
-lights[0] = new THREE.AmbientLight(0xffffff, 0.4);
+lights[0] = new THREE.AmbientLight(0xffffff, 0.6);
 
 for (var i = 1; i <= 6; i++)
 {
@@ -496,7 +489,7 @@ var showTutorial = function (isShowed) {
 var showInfo = function () {
     if (isAiming)
     {
-        document.getElementById("info").style.display = "inline-block";
+        document.getElementById("info").style.display = "inline";
         document.getElementById("info-image").src = models[raycastTargetName].img;
         document.getElementById("info-text").innerHTML = models[raycastTargetName].text;
     }
