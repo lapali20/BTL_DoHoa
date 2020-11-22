@@ -1,6 +1,6 @@
 import Rect from './Rect.js'
 
-var speed = 6;
+var speed = 2;
 
 var clock = new THREE.Clock();
 var scene = new THREE.Scene();
@@ -8,7 +8,7 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.x = 6;
 camera.position.z = -3;
-camera.lookAt(0, 0, 0);
+camera.lookAt(6, 0, 0);
 
 var renderer = new THREE.WebGLRenderer();
 renderer.shadowMap.enabled = true;
@@ -45,18 +45,204 @@ var models = {
         interactable: false,
         posX: 0,
         posY: 0,
-        posZ: 0
+        posZ: 0,
+        rotate: 0,
     },
     khung_anh: {
         obj:"models/Khung_anh_doc.obj",
         mtl:"models/Khung_anh_doc.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4,
+        posX: 4.8,
         posY: 2,
-        posZ: 0
+        posZ: -0.5,
+        rotate: -Math.PI / 2,
+        img: "kinhlup.png",
+        text: "nothing to show"
     },
-    
+    NguyenVanHieu: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/Khung_anh_doc.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: 1,
+        rotate: -Math.PI / 2,
+        img: "./Texture/1.png",
+        text: "thay Nguyen Van Hieu"
+    },
+    khung_anh2: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/Khung_anh_doc.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: 2.5,
+        rotate: -Math.PI / 2,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khung_anh3: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/Khung_anh_doc.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: -2,
+        rotate: -Math.PI / 2,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    NguyenVanDao: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/NguyenVanDao.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: -3.5,
+        rotate: -Math.PI / 2,
+        img: "Texture/HT3.png",
+        text: `giáo sư Nguyễn Văn Đạo (1937 - 2006)
+
+Giám đốc Đại học Quốc gia Hà Nội 
+nhiệm kì 1993 - năm 2001`
+    },
+    khung_anh5: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/Khung_anh_doc.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.8,
+        posY: 2,
+        posZ: 0.5,
+        rotate: Math.PI / 2,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 0,
+        posY: 2.5,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh1 : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 0,
+        posY: 1.2,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh2 : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.5,
+        posY: 2.5,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh3 : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.5,
+        posY: 1.2,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh4 : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -2.5,
+        posY: 2.5,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    khungNganh5 : {
+        obj:"models/Khung_anh_ngang.obj",
+        mtl:"models/Khung_anh_ngang.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -2.5,
+        posY: 1.2,
+        posZ: 7.45,
+        rotate: - Math.PI,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    be1 : {
+        obj:"models/Tu.obj",
+        mtl:"models/Tu.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: false,
+        posX: 0,
+        posY: 0,
+        posZ: -6,
+        rotate: 0,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    be2 : {
+        obj:"models/Tu.obj",
+        mtl:"models/Tu.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: false,
+        posX: 2.5,
+        posY: 0,
+        posZ: -6,
+        rotate: 0,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    be3 : {
+        obj:"models/Tu.obj",
+        mtl:"models/Tu.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: false,
+        posX: -2.5,
+        posY: 0,
+        posZ: -6,
+        rotate: 0,
+        img: "kinhlup.png",
+        text: "nothing to show"
+    },
+    HuanChuongSaoVang : {
+        obj:"models/Medal.obj",
+        mtl:"models/Medal.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -2.5,
+        posY: 1.05,
+        posZ: -6,
+        rotate: 0,
+        img: "kinhlup.png",
+        text: `ĐHQGHN kỷ niệm 100 năm ngày thành lập và đón nhận Huân chương Sao vàng`
+    }
 }
 
 var loadObjects = function() {
@@ -79,6 +265,7 @@ var loadObjects = function() {
                         }
                     })
                     object.position.set(models[key].posX, models[key].posY, models[key].posZ);
+                    object.rotation.set(0, models[key].rotate, 0);
                     models[key].mesh = object;
 					scene.add(models[key].mesh);
 				});
@@ -250,6 +437,9 @@ var listBlock = [
     new Rect({x : -5, y : 0, z : 0}, 1, 17),    // tuong
     new Rect({x : 0, y : 0, z : 7.5}, 11, 1),   //
     new Rect({x : 0, y : 0, z : -7.5}, 11, 1),  //
+    new Rect({x : 0, y : 0, z : -6}, 1, 1),
+    new Rect({x : 2.5, y : 0, z : -6}, 1, 1),
+    new Rect({x : -2.5, y : 0, z : -6}, 1, 1),
 ]
 
 var Block = function() {
