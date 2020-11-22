@@ -1,0 +1,37 @@
+# Blender MTL File: 'Medal.blend'
+# Material Count: 3
+
+newmtl Day
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.800000 0.500201
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\1K-casino_carpet_4-diffuse.jpg
+map_Ns D:\\BTL_DoHoa\\Texture\\Clay001_2K_Roughness.jpg
+
+newmtl Gold
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Brushed_gold_02_1K_Base_Color.png
+map_Ns D:\\BTL_DoHoa\\Texture\\San_go_roughness.jpg
+
+newmtl Nut
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.234561 0.214466
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\BTL_DoHoa\\Texture\\Plastic008_2K_Color.jpg
