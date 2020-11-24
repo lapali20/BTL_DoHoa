@@ -40,53 +40,63 @@ var models = {
         posZ: 0,
         rotate: 0,
     },
-    khung_anh: {
-        obj:"models/Khung_anh_doc.obj",
-        mtl:"models/Khung_anh_doc.mtl",
+    Door: {
+        obj:"models/Door.obj",
+        mtl:"models/Door.mtl",
         mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 4.8,
-        posY: 2,
-        posZ: -0.5,
-        rotate: -Math.PI / 2,
-        img: "kinhlup.png",
-        text: "nothing to show"
+        interactable: false,
+        posX: 4.95,
+        posY: 0,
+        posZ: 4.5,
+        rotate: 0
     },
-    NguyenVanHieu: {
+    NguyenKimSon: {
         obj:"models/Khung_anh_doc.obj",
-        mtl:"models/Khung_anh_doc.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 4.8,
-        posY: 2,
-        posZ: 1,
-        rotate: -Math.PI / 2,
-        img: "./Texture/1.png",
-        text: "thay Nguyen Van Hieu"
-    },
-    khung_anh2: {
-        obj:"models/Khung_anh_doc.obj",
-        mtl:"models/Khung_anh_doc.mtl",
+        mtl:"models/NguyenKimSon.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: 4.8,
         posY: 2,
         posZ: 2.5,
         rotate: -Math.PI / 2,
-        img: "kinhlup.png",
-        text: "nothing to show"
+        img: "NguyenKimSon.jpg",
+        text: "PGS.TS Nguyen Kim Son"
     },
-    khung_anh3: {
+    PhungXuanNha: {
         obj:"models/Khung_anh_doc.obj",
-        mtl:"models/Khung_anh_doc.mtl",
+        mtl:"models/PhungXuanNha.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: 1,
+        rotate: -Math.PI / 2,
+        img: "./PhungXuanNha.jpg",
+        text: "GS.TS Phung Xuan Nha"
+    },
+    MaiTrongNhuan: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/MaiTrongNhuan.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4.8,
+        posY: 2,
+        posZ: -0.5,
+        rotate: -Math.PI / 2,
+        img: "MaiTrongNhuan.png",
+        text: "Mai Trong Nhuan"
+    },
+    DaoTrongThi: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/DaoTrongThi.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: 4.8,
         posY: 2,
         posZ: -2,
         rotate: -Math.PI / 2,
-        img: "kinhlup.png",
-        text: "nothing to show"
+        img: "DaoTrongThi.png",
+        text: `DaoTrongThi`
     },
     NguyenVanDao: {
         obj:"models/Khung_anh_doc.obj",
@@ -103,29 +113,15 @@ var models = {
 Giám đốc Đại học Quốc gia Hà Nội 
 nhiệm kì 1993 - năm 2001`
     },
-    DaoTrongThi: {
-        obj:"models/Khung_anh_doc.obj",
-        mtl:"models/DaoTrongThi.mtl",
+    GiaDo: {
+        obj:"models/GiaDo.obj",
+        mtl:"models/GiaDo.mtl",
         mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: -4.8,
-        posY: 2,
-        posZ: 0.5,
-        rotate: Math.PI / 2,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
-    MaiTrongNhuan : {
-        obj:"models/Khung_anh_doc.obj",
-        mtl:"models/MaiTrongNhuan.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 0,
-        posY: 2.5,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "Texture/HT2.jpg",
-        text: "nothing to show"
+        interactable: false,
+        posX: -4.5,
+        posY: 0,
+        posZ: 0,
+        rotate: 0,
     },
     khungNganh1 : {
         obj:"models/Khung_anh_ngang.obj",
@@ -223,17 +219,18 @@ nhiệm kì 1993 - năm 2001`
         img: "kinhlup.png",
         text: "nothing to show"
     },
-    HuanChuongSaoVang : {
+    Medal1 : {
         obj:"models/Star.obj",
         mtl:"models/Star.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
         posX: -2.5,
-        posY: 1.05,
+        posY: 1.25,
         posZ: -6,
         rotate: 0,
         img: "kinhlup.png",
-        text: `ĐHQGHN kỷ niệm 100 năm ngày thành lập và đón nhận Huân chương Sao vàng`
+        text: `ĐHQGHN kỷ niệm 100 năm ngày thành lập 
+và đón nhận Huân chương Sao vàng`
     }
 }
 
@@ -267,6 +264,26 @@ var loadObjects = function() {
     }
 }
 
+var UpdateObject = function() {
+    models["Medal1"].mesh.rotation.y += 0.02;
+}
+
+// ------ tương tác với đồ vật
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+function onMouseMove( event ) {
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+}
+
+var UpdateRaycast = function () {
+    raycaster.setFromCamera( mouse, camera );
+	const intersects = raycaster.intersectObjects( scene.children, true );
+    if (intersects.length > 0)
+        raycastTargetName = intersects[0].object.species;   // select the first one
+}
+
 var distance = function(object) {
     var x = object.x - camera.position.x;
     var z = object.z - camera.position.z;
@@ -275,7 +292,7 @@ var distance = function(object) {
 
 var raycastTargetName;
 var isAiming = false;
-var UpdateObjects = function() {
+var IdentifyTarget = function() {
     if (raycastTargetName)
     {
         if (models[raycastTargetName].interactable)
@@ -293,27 +310,11 @@ var UpdateObjects = function() {
         else
         {
             isAiming = false;
-            closeInfo();
             swapPointer(false);
         }
     }
 }
 
-// ------ tương tác với đồ vật
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-
-function onMouseMove( event ) {
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-}
-
-var updateRaycast = function () {
-    raycaster.setFromCamera( mouse, camera );
-	const intersects = raycaster.intersectObjects( scene.children, true );
-    if (intersects.length > 0)
-        raycastTargetName = intersects[0].object.species;   // select the first one
-}
 
 // ------ anh sang
 var lights = [];
@@ -407,13 +408,6 @@ function processKeyboard() {
     }
 }
 
-const geometry = new THREE.BoxGeometry( 0.3, 2.5, 2 );
-const material = new THREE.MeshPhongMaterial( {color: 0x352315} );
-var cube = new THREE.Mesh( geometry, material );
-cube.receiveShadow = true;
-cube.castShadow = true;
-cube.position.set(5, 1.25, 4.5);
-scene.add( cube );
 var door = new Rect({x: 5, y: 0, z: 4.5}, 0.3, 2);
 var checkIn = function() {
     if (door.Contain(camera.position.x, camera.position.z))
@@ -518,8 +512,9 @@ var GameLoop = function() {
 
 var update = function() {    
     Block();
-    updateRaycast();
-    UpdateObjects();
+    UpdateObject()
+    UpdateRaycast();
+    IdentifyTarget();
 };
 
 window.addEventListener( 'mousemove', onMouseMove, false );
