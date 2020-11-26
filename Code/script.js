@@ -95,7 +95,7 @@ var models = {
         posY: 2,
         posZ: -2,
         rotate: -Math.PI / 2,
-        img: "DaoTrongThi.png",
+        img: "DaoTrongThi.jpg",
         text: `DaoTrongThi`
     },
     NguyenVanDao: {
