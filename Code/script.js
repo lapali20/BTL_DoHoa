@@ -60,7 +60,10 @@ var models = {
         posZ: 2.5,
         rotate: -Math.PI / 2,
         img: "NguyenKimSon.jpg",
-        text: "PGS.TS Nguyen Kim Son"
+        text: `PGS.TS Nguyen Kim Son
+        
+Giám đốc Đại học Quốc gia Hà Nội 
+nhiệm kì 1993 - năm 2001`
     },
     PhungXuanNha: {
         obj:"models/Khung_anh_doc.obj",
@@ -72,7 +75,10 @@ var models = {
         posZ: 1,
         rotate: -Math.PI / 2,
         img: "./PhungXuanNha.jpg",
-        text: "GS.TS Phung Xuan Nha"
+        text: `GS.TS Phung Xuan Nha
+        
+Giám đốc Đại học Quốc gia Hà Nội 
+từ năm 2012 đến năm 2016`
     },
     MaiTrongNhuan: {
         obj:"models/Khung_anh_doc.obj",
@@ -83,8 +89,11 @@ var models = {
         posY: 2,
         posZ: -0.5,
         rotate: -Math.PI / 2,
-        img: "MaiTrongNhuan.png",
-        text: "Mai Trong Nhuan"
+        img: "./MaiTrongNhuan.jpg",
+        text: `GS.TS. Mai Trọng Nhuận
+        
+Giám đốc Đại học Quốc gia Hà Nội 
+từ năm 2007 đến năm 2012`
     },
     DaoTrongThi: {
         obj:"models/Khung_anh_doc.obj",
@@ -96,7 +105,10 @@ var models = {
         posZ: -2,
         rotate: -Math.PI / 2,
         img: "DaoTrongThi.jpg",
-        text: `DaoTrongThi`
+        text: `GS.VS. Đào Trọng Thi
+        
+Giám đốc Đại học Quốc gia Hà Nội 
+nhiệm kì 2001 - năm 2007`
     },
     NguyenVanDao: {
         obj:"models/Khung_anh_doc.obj",
@@ -108,10 +120,22 @@ var models = {
         posZ: -3.5,
         rotate: -Math.PI / 2,
         img: "HT3.jpg",
-        text: `giáo sư Nguyễn Văn Đạo (1937 - 2006)
+        text: `GS.VS. Nguyễn Văn Đạo (1937 - 2006)
 
 Giám đốc Đại học Quốc gia Hà Nội 
-nhiệm kì 1993 - năm 2001`
+từ năm 1994 - năm 2001`
+    },
+    KhungTranh: {
+        obj:"models/Khung_anh_doc.obj",
+        mtl:"models/NguyenVanDao.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.8,
+        posY: 2,
+        posZ: -3.5,
+        rotate: Math.PI / 2,
+        img: "",
+        text: ``
     },
     GiaDo: {
         obj:"models/GiaDo.obj",
