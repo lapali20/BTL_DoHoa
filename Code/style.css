@@ -3,6 +3,11 @@ html {
   font-weight: bolder;
 }
 
+audio {
+  position: absolute;
+  display: none;
+}
+
 img {
   position: absolute;
   margin-top: 25%;

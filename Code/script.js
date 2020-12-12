@@ -55,10 +55,11 @@ var models = {
         mtl:"models/NguyenKimSon.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4.8,
+        posX: 4.86,
         posY: 2,
-        posZ: 2.5,
+        posZ: 2.1,
         rotate: -Math.PI / 2,
+        scale: 1.5,
         info:"./info/NguyenKimSon.html"
     },
     PhungXuanNha: {
@@ -66,10 +67,11 @@ var models = {
         mtl:"models/PhungXuanNha.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4.8,
+        posX: 4.86,
         posY: 2,
-        posZ: 1,
+        posZ: 0.3,
         rotate: -Math.PI / 2,
+        scale: 1.5,
         info:"./info/PhungXuanNha.html"
     },
     MaiTrongNhuan: {
@@ -77,10 +79,11 @@ var models = {
         mtl:"models/MaiTrongNhuan.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4.8,
+        posX: 4.86,
         posY: 2,
-        posZ: -0.5,
+        posZ: -1.5,
         rotate: -Math.PI / 2,
+        scale: 1.5,
         info:"./info/MaiTrongNhuan.html"
     },
     DaoTrongThi: {
@@ -88,10 +91,11 @@ var models = {
         mtl:"models/DaoTrongThi.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4.8,
+        posX: 4.86,
         posY: 2,
-        posZ: -2,
+        posZ: -3.2,
         rotate: -Math.PI / 2,
+        scale: 1.5,
         info:"./info/DaoTrongThi.html"
     },
     NguyenVanDao: {
@@ -99,10 +103,11 @@ var models = {
         mtl:"models/NguyenVanDao.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: 4.8,
+        posX: 4.86,
         posY: 2,
-        posZ: -3.5,
+        posZ: -4.9,
         rotate: -Math.PI / 2,
+        scale: 1.5,
         info:"./info/NguyenVanDao.html"
     },
     be1 : {
@@ -130,11 +135,24 @@ var models = {
         obj:"models/GiaDo.obj",
         mtl:"models/GiaDo.mtl",
         mesh: new THREE.Mesh(),
-        interactable: false,
+        interactable: true,
         posX: -2.5,
         posY: 0,
         posZ: -6,
         rotate: - Math.PI / 2,
+        info: "https://vnu.edu.vn/home/?C1916"
+    },
+    book : {
+        obj:"models/book.obj",
+        mtl:"models/book.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -2.2,
+        posY: 0.3,
+        posZ: -6,
+        rotate: - Math.PI / 2,
+        scale : 0.7,
+        info: "https://vnu.edu.vn/home/?C1916"
     },
     Medal1 : {
         obj:"models/Star.obj",
@@ -279,17 +297,103 @@ var models = {
         rotate: Math.PI,
         info: "./info/UMP.html"
     },
-    Rect : {
-        obj:"models/Rect.obj",
-        mtl:"models/Rect.mtl",
+    
+    XuanThuy : {
+        obj:"models/144XuanThuy.obj",
+        mtl:"models/144XuanThuy.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: -4.65, 
+        posX: -4.88, 
+        posY: 2,
+        posZ: -0.8,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/XuanThuy.html"
+    },
+    LuongTheVinh : {
+        obj:"models/182LuongTheVinh.obj",
+        mtl:"models/182LuongTheVinh.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: -2.5,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/LuongTheVinh.html"
+    },
+    NguyenTrai : {
+        obj:"models/334NguyenTrai.obj",
+        mtl:"models/334NguyenTrai.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: -4.2,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/NguyenTrai.html"
+    },
+    HoaLac : {
+        obj:"models/HoaLac.obj",
+        mtl:"models/HoaLac.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: -6,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/HoaLac.html"
+    },
+    DieuHanh : {
+        obj:"models/DieuHanh.obj",
+        mtl:"models/DieuHanh.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: 0.9,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/DieuHanh.html"
+    },
+    DHTH : {
+        obj:"models/DHTH.obj",
+        mtl:"models/DHTH.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
         posY: 2,
         posZ: 6,
         rotate: Math.PI / 2,
-        info: "./info/VNU.html"
-    }
+        scale: 1.5,
+        info: "./info/DHTH.html"
+    },
+    FlyCam : {
+        obj:"models/FlyCam.obj",
+        mtl:"models/FlyCam.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: 4.3,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/FlyCam.html"
+    },
+    Cur : {
+        obj:"models/Cur.obj",
+        mtl:"models/Cur.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.88, 
+        posY: 2,
+        posZ: 2.6,
+        rotate: Math.PI / 2,
+        scale: 1.5,
+        info: "./info/Cur.html"
+    },
 }
 
 var loadObjects = function() {
@@ -313,6 +417,10 @@ var loadObjects = function() {
                     })
                     object.position.set(models[key].posX, models[key].posY, models[key].posZ);
                     object.rotation.set(0, models[key].rotate, 0);
+                    if (models[key].scale != null)
+                    {
+                        object.scale.set(models[key].scale, models[key].scale, models[key].scale);
+                    }
                     models[key].mesh = object;
 					scene.add(models[key].mesh);
 				});
@@ -454,7 +562,13 @@ addEventListener('keyup', (e) => {
 })
 
 addEventListener('mousedown', (e) => {
-    showInfo();
+    if (isAiming)
+    {
+        showInfo();
+    }
+    else {
+        closeInfo();
+    }
 });
 
 function processKeyboard() {
@@ -522,6 +636,14 @@ function processKeyboard() {
             playMusic();
         }
     }
+
+    // if (keyboard['Control'])
+    // {
+    //     speed = 5;
+    // }
+    // else {
+    //     speed = 2;
+    // }
 }
 
 var door = new Rect({x: 5, y: 0, z: 4.5}, 0.3, 2);
