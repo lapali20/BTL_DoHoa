@@ -285,6 +285,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 2.6,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "UMP.html"
     }
 }
 
@@ -541,14 +542,17 @@ var showTutorial = function (isShowed) {
 var showInfo = function () {
     if (isAiming)
     {
-        document.getElementById("info").style.display = "inline";
-        document.getElementById("info-image").src = models[raycastTargetName].img;
-        document.getElementById("info-text").innerHTML = models[raycastTargetName].text;
+        // document.getElementById("info").style.display = "inline";
+        // document.getElementById("info-image").src = models[raycastTargetName].img;
+        // document.getElementById("info-text").innerHTML = models[raycastTargetName].text;
+        document.getElementById("detail").style.display = "inline";
+        document.getElementById("detail").src = models[raycastTargetName].info;
     }
 }
 
 var closeInfo = function () {
-    document.getElementById("info").style.display = "none";
+    // document.getElementById("info").style.display = "none";
+    document.getElementById("detail").style.display = "none";
 }
 
 // ---------
