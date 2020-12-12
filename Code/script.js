@@ -146,67 +146,7 @@ từ năm 1994 - năm 2001`
         posY: 0,
         posZ: 0,
         rotate: 0,
-    },
-    khungNganh1 : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 0,
-        posY: 1.2,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
-    khungNganh2 : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 2.5,
-        posY: 2.5,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
-    khungNganh3 : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: 2.5,
-        posY: 1.2,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
-    khungNganh4 : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: -2.5,
-        posY: 2.5,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
-    khungNganh5 : {
-        obj:"models/Khung_anh_ngang.obj",
-        mtl:"models/Khung_anh_ngang.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: -2.5,
-        posY: 1.2,
-        posZ: 7.45,
-        rotate: - Math.PI,
-        img: "kinhlup.png",
-        text: "nothing to show"
-    },
+    }, 
     be1 : {
         obj:"models/Tu.obj",
         mtl:"models/Tu.mtl",
@@ -255,6 +195,96 @@ từ năm 1994 - năm 2001`
         img: "kinhlup.png",
         text: `ĐHQGHN kỷ niệm 100 năm ngày thành lập 
 và đón nhận Huân chương Sao vàng`
+    },
+    VNU : {
+        obj:"models/Logo-VNU.obj",
+        mtl:"models/Logo-VNU.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 0,
+        posY: 2.7,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    HUS : {
+        obj:"models/HUS.obj",
+        mtl:"models/HUS.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4,
+        posY: 2.6,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    USSH : {
+        obj:"models/USSH.obj",
+        mtl:"models/USSH.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 4,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    ULIS : {
+        obj:"models/ULIS.obj",
+        mtl:"models/ULIS.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.4,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    UET : {
+        obj:"models/UET.obj",
+        mtl:"models/UET.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 0.7,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    UEB : {
+        obj:"models/UEB.obj",
+        mtl:"models/UEB.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -0.7,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    UEd : {
+        obj:"models/UED.obj",
+        mtl:"models/UED.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -2.4,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    VJU : {
+        obj:"models/VJU.obj",
+        mtl:"models/VJU.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4,
+        posY: 1,
+        posZ: 7.45,
+        rotate: Math.PI,
+    },
+    UMP : {
+        obj:"models/UMP.obj",
+        mtl:"models/UMP.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4,
+        posY: 2.6,
+        posZ: 7.45,
+        rotate: Math.PI,
     }
 }
 
@@ -286,6 +316,10 @@ var loadObjects = function() {
 			
 		})(_key);
     }
+}
+
+var FixObject = function () {
+    models["VNU"].mesh.scale.set(0.7, 0.7, 0.7);
 }
 
 var UpdateObject = function() {
@@ -521,6 +555,7 @@ var closeInfo = function () {
 var Init = function () {
     loadObjects();
     InitLight();
+
 }
 
 var render = function() {
@@ -534,7 +569,8 @@ var GameLoop = function() {
     render();
 };
 
-var update = function() {    
+var update = function() {   
+    FixObject(); 
     Block();
     UpdateObject()
     UpdateRaycast();
@@ -545,4 +581,5 @@ window.addEventListener( 'mousemove', onMouseMove, false );
 
 Init();
 GameLoop();
+
 console.log("Done!");

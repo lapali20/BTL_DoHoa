@@ -10,6 +10,13 @@ img {
   transform: translateX(-50%) translateY(-50%);
 }
 
+#detail {
+  position: absolute;
+  margin-top: 25%;
+  margin-left: 20%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 #tip {
   position: absolute;
   margin-top: 3%;
