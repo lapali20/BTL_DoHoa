@@ -17,7 +17,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild( renderer.domElement);
 
 const loader = new THREE.TextureLoader();
-loader.load('background.jpg' , function(texture)
+loader.load('./models/Texture/background.jpg' , function(texture)
             {
              scene.background = texture;  
             });
@@ -59,11 +59,7 @@ var models = {
         posY: 2,
         posZ: 2.5,
         rotate: -Math.PI / 2,
-        img: "NguyenKimSon.jpg",
-        text: `PGS.TS Nguyen Kim Son
-        
-Giám đốc Đại học Quốc gia Hà Nội 
-nhiệm kì 1993 - năm 2001`
+        info:"./info/NguyenKimSon.html"
     },
     PhungXuanNha: {
         obj:"models/Khung_anh_doc.obj",
@@ -74,11 +70,7 @@ nhiệm kì 1993 - năm 2001`
         posY: 2,
         posZ: 1,
         rotate: -Math.PI / 2,
-        img: "./PhungXuanNha.jpg",
-        text: `GS.TS Phung Xuan Nha
-        
-Giám đốc Đại học Quốc gia Hà Nội 
-từ năm 2012 đến năm 2016`
+        info:"./info/PhungXuanNha.html"
     },
     MaiTrongNhuan: {
         obj:"models/Khung_anh_doc.obj",
@@ -89,11 +81,7 @@ từ năm 2012 đến năm 2016`
         posY: 2,
         posZ: -0.5,
         rotate: -Math.PI / 2,
-        img: "./MaiTrongNhuan.jpg",
-        text: `GS.TS. Mai Trọng Nhuận
-        
-Giám đốc Đại học Quốc gia Hà Nội 
-từ năm 2007 đến năm 2012`
+        info:"./info/MaiTrongNhuan.html"
     },
     DaoTrongThi: {
         obj:"models/Khung_anh_doc.obj",
@@ -104,11 +92,7 @@ từ năm 2007 đến năm 2012`
         posY: 2,
         posZ: -2,
         rotate: -Math.PI / 2,
-        img: "DaoTrongThi.jpg",
-        text: `GS.VS. Đào Trọng Thi
-        
-Giám đốc Đại học Quốc gia Hà Nội 
-nhiệm kì 2001 - năm 2007`
+        info:"./info/DaoTrongThi.html"
     },
     NguyenVanDao: {
         obj:"models/Khung_anh_doc.obj",
@@ -119,34 +103,8 @@ nhiệm kì 2001 - năm 2007`
         posY: 2,
         posZ: -3.5,
         rotate: -Math.PI / 2,
-        img: "HT3.jpg",
-        text: `GS.VS. Nguyễn Văn Đạo (1937 - 2006)
-
-Giám đốc Đại học Quốc gia Hà Nội 
-từ năm 1994 - năm 2001`
+        info:"./info/NguyenVanDao.html"
     },
-    KhungTranh: {
-        obj:"models/Khung_anh_doc.obj",
-        mtl:"models/NguyenVanDao.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: true,
-        posX: -4.8,
-        posY: 2,
-        posZ: -3.5,
-        rotate: Math.PI / 2,
-        img: "",
-        text: ``
-    },
-    GiaDo: {
-        obj:"models/GiaDo.obj",
-        mtl:"models/GiaDo.mtl",
-        mesh: new THREE.Mesh(),
-        interactable: false,
-        posX: -4.5,
-        posY: 0,
-        posZ: 0,
-        rotate: 0,
-    }, 
     be1 : {
         obj:"models/Tu.obj",
         mtl:"models/Tu.mtl",
@@ -156,45 +114,71 @@ từ năm 1994 - năm 2001`
         posY: 0,
         posZ: -6,
         rotate: 0,
-        img: "kinhlup.png",
-        text: "nothing to show"
     },
-    be2 : {
-        obj:"models/Tu.obj",
-        mtl:"models/Tu.mtl",
+    be_nhac : {
+        obj:"models/GiaDo.obj",
+        mtl:"models/GiaDo.mtl",
         mesh: new THREE.Mesh(),
-        interactable: false,
+        interactable: true,
         posX: 2.5,
         posY: 0,
         posZ: -6,
-        rotate: 0,
-        img: "kinhlup.png",
-        text: "nothing to show"
+        rotate: - Math.PI / 2,
+        info: "./info/Nhac.html"
     },
     be3 : {
-        obj:"models/Tu.obj",
-        mtl:"models/Tu.mtl",
+        obj:"models/GiaDo.obj",
+        mtl:"models/GiaDo.mtl",
         mesh: new THREE.Mesh(),
         interactable: false,
         posX: -2.5,
         posY: 0,
         posZ: -6,
-        rotate: 0,
-        img: "kinhlup.png",
-        text: "nothing to show"
+        rotate: - Math.PI / 2,
     },
     Medal1 : {
         obj:"models/Star.obj",
         mtl:"models/Star.mtl",
         mesh: new THREE.Mesh(),
         interactable: true,
-        posX: -2.5,
+        posX: 0,
         posY: 1.25,
         posZ: -6,
         rotate: 0,
-        img: "kinhlup.png",
-        text: `ĐHQGHN kỷ niệm 100 năm ngày thành lập 
-và đón nhận Huân chương Sao vàng`
+        info:"./info/ThanhTich.html"
+    },
+    note_1 : {
+        obj:"models/note.obj",
+        mtl:"models/note.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.5,
+        posY: 0.7,
+        posZ: -5.8,
+        rotate: Math.PI,
+        info:"./info/Nhac.html"
+    },
+    note_2 : {
+        obj:"models/note.obj",
+        mtl:"models/note.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.65,
+        posY: 0.8,
+        posZ: -5.8,
+        rotate: 0,
+        info:"./info/Nhac.html"
+    },
+    note_3 : {
+        obj:"models/note.obj",
+        mtl:"models/note.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: 2.9,
+        posY: 0.7,
+        posZ: -5.8,
+        rotate: - Math.PI,
+        info:"./info/Nhac.html"
     },
     VNU : {
         obj:"models/Logo-VNU.obj",
@@ -205,6 +189,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 2.7,
         posZ: 7.45,
         rotate: Math.PI,
+        info:"./info/VNU.html"
     },
     HUS : {
         obj:"models/HUS.obj",
@@ -215,6 +200,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 2.6,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/HUS.html"
     },
     USSH : {
         obj:"models/USSH.obj",
@@ -225,6 +211,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/USSH.html"
     },
     ULIS : {
         obj:"models/ULIS.obj",
@@ -235,6 +222,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/ULIS.html"
     },
     UET : {
         obj:"models/UET.obj",
@@ -245,6 +233,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/UET.html"
     },
     UEB : {
         obj:"models/UEB.obj",
@@ -255,6 +244,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/UEB.html"
     },
     UEd : {
         obj:"models/UED.obj",
@@ -265,6 +255,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/UED.html"
     },
     VJU : {
         obj:"models/VJU.obj",
@@ -275,6 +266,7 @@ và đón nhận Huân chương Sao vàng`
         posY: 1,
         posZ: 7.45,
         rotate: Math.PI,
+        info: "./info/VJU.html"
     },
     UMP : {
         obj:"models/UMP.obj",
@@ -285,7 +277,18 @@ và đón nhận Huân chương Sao vàng`
         posY: 2.6,
         posZ: 7.45,
         rotate: Math.PI,
-        info: "UMP.html"
+        info: "./info/UMP.html"
+    },
+    Rect : {
+        obj:"models/Rect.obj",
+        mtl:"models/Rect.mtl",
+        mesh: new THREE.Mesh(),
+        interactable: true,
+        posX: -4.65, 
+        posY: 2,
+        posZ: 6,
+        rotate: Math.PI / 2,
+        info: "./info/VNU.html"
     }
 }
 
@@ -325,6 +328,24 @@ var FixObject = function () {
 
 var UpdateObject = function() {
     models["Medal1"].mesh.rotation.y += 0.02;
+    NoteAnimation();
+}
+
+var isPlaying = false;
+var angle = 0;
+var NoteAnimation = function() {
+    if (isPlaying)
+    {
+        angle += Math.PI * 0.005;
+        models["note_1"].mesh.rotation.y -= 0.02;
+        models["note_1"].mesh.position.y = 0.8 + 0.1 * Math.sin(angle);
+
+        models["note_2"].mesh.rotation.y += 0.01;
+        models["note_2"].mesh.position.y = 0.8 - 0.1 * Math.sin(angle);
+
+        models["note_3"].mesh.rotation.y -= 0.02;
+        models["note_3"].mesh.position.y = 0.8 + 0.1 * Math.sin(angle);
+    }
 }
 
 // ------ tương tác với đồ vật
@@ -356,7 +377,7 @@ var IdentifyTarget = function() {
     {
         if (models[raycastTargetName].interactable)
         {
-            if (distance(models[raycastTargetName].mesh.position) <= 2)
+            if (distance(models[raycastTargetName].mesh.position) <= 2.5)
             {
                 if (isAiming == false)
                 {
@@ -438,6 +459,8 @@ addEventListener('mousedown', (e) => {
 
 function processKeyboard() {
     let actualSpeed = speed * clock.getDelta();
+    let moveSpeed = 0.02;
+    let scaleSpeed = 0.02;
     if (keyboard['w']) {
         controls.moveForward(actualSpeed);
         
@@ -458,12 +481,46 @@ function processKeyboard() {
     }
 
     if (keyboard['h']) {
-        showTutorial(true);
+        showTutorial();
     }
 
     if (keyboard['q']) {
         closeInfo();
-        showTutorial(false);
+    }
+
+    if (keyboard['i']) {
+        moveObj(moveSpeed, 0, 0);
+    }
+
+    if (keyboard['k']) {
+        moveObj(-moveSpeed, 0, 0);
+    }
+
+    if (keyboard['l']) {
+        moveObj(0, 0, moveSpeed);
+    }
+
+    if (keyboard['j']) {
+        moveObj(0, 0, -moveSpeed);
+    }
+
+    if (keyboard['o']) {
+        scaleObj(scaleSpeed);
+    }
+
+    if (keyboard['u']) {
+        scaleObj(-scaleSpeed);
+    }
+
+    if (keyboard['r']) {
+        if (isPlaying)
+        {
+            pauseMusic();
+        }
+        else
+        {
+            playMusic();
+        }
     }
 }
 
@@ -471,7 +528,7 @@ var door = new Rect({x: 5, y: 0, z: 4.5}, 0.3, 2);
 var checkIn = function() {
     if (door.Contain(camera.position.x, camera.position.z))
     {
-        showTutorial(false);
+        closeInfo();
     }
 }
 
@@ -518,6 +575,7 @@ let startBtn = document.querySelector("#start-btn");    // nhan de bat dau khoa 
 startBtn.addEventListener('click', ()=> {
     controls.lock();
     startBtn.style.display = "none";
+    closeInfo();
 })
 
 controls.addEventListener('unlock', ()=> {
@@ -535,31 +593,79 @@ var swapPointer = function (aim) {
     }
 }
 
-var showTutorial = function (isShowed) {
-    document.getElementById("tutorial").style.display = (isShowed == true) ? "inline-block" : "none";
+var showTutorial = function () {
+    document.getElementById("detail").src = "./info/HuongDan.html";
+    document.getElementById("detail").style.display = "inline";
 }
 
 var showInfo = function () {
     if (isAiming)
     {
-        // document.getElementById("info").style.display = "inline";
-        // document.getElementById("info-image").src = models[raycastTargetName].img;
-        // document.getElementById("info-text").innerHTML = models[raycastTargetName].text;
-        document.getElementById("detail").style.display = "inline";
         document.getElementById("detail").src = models[raycastTargetName].info;
+        document.getElementById("detail").style.display = "inline";
     }
 }
 
 var closeInfo = function () {
-    // document.getElementById("info").style.display = "none";
     document.getElementById("detail").style.display = "none";
+}
+
+var moveObj = function (x, y, z) {
+    if (!isAiming) 
+    {
+        return;
+    }
+    models[raycastTargetName].mesh.position.x += x;
+    models[raycastTargetName].mesh.position.y += y;
+    models[raycastTargetName].mesh.position.z += z;
+}
+
+var rotateObj = function (x, y, z) {
+    if (!isAiming) 
+    {
+        return;
+    }
+    models[raycastTargetName].mesh.rotation.x += x;
+    models[raycastTargetName].mesh.rotation.y += y;
+    models[raycastTargetName].mesh.rotation.z += z;
+}
+
+var scaleObj = function (x) {
+    if (!isAiming) 
+    {
+        return;
+    }
+    models[raycastTargetName].mesh.scale.x += x;
+    models[raycastTargetName].mesh.scale.y += x;
+    models[raycastTargetName].mesh.scale.z += x;
+}
+
+var delay = 0;
+var playMusic = function() {
+    if (delay > 0)
+    {
+        return;
+    }
+    if (raycastTargetName == "note_1" || raycastTargetName == "note_2" || raycastTargetName == "note_3" || raycastTargetName == "be_nhac")
+    document.getElementById("music").play();
+    isPlaying = true;
+    delay = 0.25;
+}
+
+var pauseMusic = function() {
+    if (delay > 0)
+    {
+        return;
+    }
+    document.getElementById("music").pause();
+    isPlaying = false;
+    delay = 0.25;
 }
 
 // ---------
 var Init = function () {
     loadObjects();
     InitLight();
-
 }
 
 var render = function() {
@@ -579,6 +685,13 @@ var update = function() {
     UpdateObject()
     UpdateRaycast();
     IdentifyTarget();
+    if (delay <= 0)
+    {
+        return;
+    }
+    else {
+        delay -= clock.getDelta();
+    }
 };
 
 window.addEventListener( 'mousemove', onMouseMove, false );
